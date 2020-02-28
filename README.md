@@ -4,4 +4,4 @@ Designed & developed By Me .
 
 
 # Live Demo
-(AMACORP)[https://basem10r.github.io/AMACORP-heavy-equipment-landing-page/]
+[AMACORP](https://basem10r.github.io/AMACORP-heavy-equipment-landing-page/)
