@@ -1,0 +1,737 @@
+/*
+
+@import
+$varcs
+@mixin & @include
+
+@extend
+
+grouping
+
+*/
+
+@import "general";
+@import "responsive";
+
+// styling infobar
+.nav1
+{
+	background-color: $blue1;
+	padding-top: 10px;
+	padding-bottom: 5px;
+	color: $white;
+	margin-bottom: 0;
+	@media #{$maxmobile}
+	{
+		display: none;
+	}
+	.left
+	{
+		float: left;
+		display: inline-block;
+		.card
+		{
+			display: inline-block;
+
+			.icon,.detail
+			{
+				display: inline-block;
+			}
+			.icon
+			{
+				i 
+				{
+					font-size: 1.2em;
+				}
+			}
+			.detail
+			{
+				margin-left:10px; 
+			}
+		}
+		.card:nth-child(2)
+		{
+			margin-left: 30px;
+		}
+	}
+	.right
+	{
+		display: inline-block;
+		float: right;
+		.icons
+		{
+			.square
+			{
+				display: inline-block;
+				border: 1px solid $white;
+				background-color: transparent;
+				color: $blue;
+				height: 30px;
+				width: 30px;
+				line-height: 30px;
+				a i 
+				{
+					color: $white;
+				}
+				&:hover
+				{
+					background-color: $white;
+					@include transition;
+					a i 
+					{
+						color: $blue1;
+					}
+				}
+			}
+		}
+	}
+}
+/* START STYLING NAVBAR
+****************************/
+.header
+{
+	margin-top: 0;
+	height:700px;
+}
+.navbar-inverse
+{
+	margin-top: 0;
+	margin-bottom: 0;
+	border:0;
+	background-color: $blue;
+	border-radius: 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.navbar-inverse .navbar-brand
+{
+	color: $white;
+	font-weight: bold;
+	letter-spacing: 4px;
+	font-size: 2.5em;
+	font-weight: 20px;
+	span
+	{
+		color: $yellow;
+	}
+	&:hover
+	{
+	}
+}
+.navbar-inverse .navbar-toggle
+{
+	background-color: transparent;
+	border: 1px solid $white;
+	&:hover,&:focus
+	{
+		background-color: transparent;
+		outline: none;
+		box-shadow: none;
+	}
+}
+
+.navbar-inverse .navbar-nav > li > a
+{
+	color: $white;
+	font-size: 16px;
+	@include transition();
+	&:hover
+	{
+		color:$yellow;
+	}
+}
+
+
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus
+{
+	background: transparent;
+	margin-right: 10px;
+	border-radius: 15px;
+	color: $yellow;
+	
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus
+{
+	background: none;
+}
+
+.affix
+{
+	background-color: #212121;
+	width: 100%;
+	height: 1.3em;
+	z-index: 6;
+	border:none;
+}
+
+
+
+
+// slider section 
+.carousel-inner
+{
+
+	.item
+	{
+		.content
+		{
+			background-color: $blue1;
+			width: 100%;
+			height: 100%;
+			opacity: 0.5;
+			position: absolute;
+		}
+		img 
+		{
+			background-position: 50% 50%;
+			background-size: cover;
+			width: 100%;
+			height: 600px;
+			@media #{$maxmobile}
+			{
+				height: 600px;
+			}
+		}
+		.carousel-caption
+		{
+			top: 0;
+			margin-top: 100px;
+			h1
+			{
+				font-size: 4em;
+				font-weight: 300;
+			}
+			.btn-primary
+			{
+				@include btn2($yellow,20px);
+				background-color: $yellow;
+				padding-top: 12px;
+				padding-bottom: 12px;
+				border: 0;
+				color: $white;
+				&:hover,&:focus
+				{
+					outline: none;
+					box-shadow: none;
+					background-color: darken($yellow,10%);
+					@include transition();
+				}
+			}
+			.btn-danger
+			{
+				@include btn2($gray,20px);
+				color: $white;
+				&:hover,&:focus
+				{
+					outline: none;
+					box-shadow: none;
+					border: 2px solid $yellow;
+					color: $yellow;
+					@include transition();
+				}
+			}
+		}
+	}
+}
+
+.carousel-control
+{
+	span 
+	{
+		margin-top: 200px;
+		font-size: 2em;
+	}
+}
+
+.carousel-indicators
+{
+	bottom: 70px;
+	li 
+	{
+		width: 14px;
+		height: 14px;
+	}
+	.active
+	{
+		width: 16px; 
+		height: 16px;
+		background: $yellow;
+		border-color: $yellow;
+	}
+}
+
+
+// start styling services section 
+.services
+{
+	background-color: $white;
+	padding-bottom: 80px;
+	padding-top: 80px;
+	color: $blue;
+	.line
+	{
+		background-color: $yellow;
+	}
+	.serv
+	{
+		margin-top: 80px;
+		margin-bottom: 80px;
+		width: 300px;
+	}
+	.box
+	{
+	  	border-top:2px solid rgba(6, 46, 46,0.5);
+	  	border-right:2px solid rgba(6, 46, 46,0.5);
+		padding: 20px 20px 10px 35px;
+		margin-top: 20px;
+		height: 150px;
+		width: 350px;
+	}
+	.box::before
+	{
+		content: '';
+		position: absolute;
+		top: 126px;
+		left: 15px;
+		width: 0px; //350
+		height: 0px; //150
+		border:2px solid transparent;
+		
+	}
+	.box:hover:before
+	{
+		animation: animate 0.8s linear forwards;
+	}
+	@keyframes animate 
+	{
+		0%{width: 0; height:0; border-top-color:$yellow; border-right-color: transparent;}
+		50%{width:350px; height:0; border-top-color:$yellow; border-right-color: $yellow;}
+		100%{width:350px; height: 152px; border-top-color:$yellow; border-right-color: $yellow;}
+	}
+	.icons i 
+	{
+		position: absolute;
+		background-color: $yellow;
+		border-radius: 0;
+		height: 60px;
+		width: 60px;
+		text-align: center;
+		line-height: 60px;	
+		font-size: 3em;
+		color:$white;
+		top: 95px;
+		left:0;
+		font-family: "Flaticon";
+	
+	}
+	[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+	[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+	  font-family: "Flaticon";
+	        font-size: 35px !important;
+    		line-height: 60px;	
+
+	font-style: normal;
+	}
+
+}
+
+.about
+{
+	padding-top: 100px;
+	padding-bottom: 100px;
+	background-color: $gray1;
+	.desc
+	{
+		@media #{$maxmobile}
+		{
+			text-align: center;
+			margin-bottom: 30px;
+		}
+		.btn-success
+		{
+			background-color: $yellow;
+			border: 0;
+			&:hover,&:focus
+			{
+				outline: none;
+				box-shadow: none;
+				background-color: darken($yellow,10%);
+				@include transition();
+			}
+		}
+	}
+}
+
+/*styling testimonials section****
+*********************************/
+.testimonials
+{
+	padding-top: 100px;
+	padding-bottom: 100px;
+.card
+{
+	text-align: left;
+	margin-top:  50px;
+	margin-bottom: 50px;
+	margin-left: 100px;
+	margin-right: 100px;
+	border-radius: 0px !important;
+	position: relative;
+	background-color: $white;
+	padding: 20px 20px 40px 70px;
+	@include shadow(0px,19px,35px,0px,rgba($black, 0.1));
+	@media #{$maxSmall}
+	{
+		margin-left: 50px;
+		margin-right: 50px;
+	}
+}
+.image img
+{
+	height: 90px;
+	width: 90px !important;
+	position: absolute;
+	top:30px;
+	left: -50px;
+	border: 2px solid $yellow;
+	@include shadow(0px,10px,35px,0px,rgba($black, 0.4));
+}
+span 
+{
+
+}
+.owl-carousel button.owl-dot
+{
+	&:focus
+	{
+		border: 0;
+		outline: none;
+		box-shadow: none;
+	}
+
+}
+.owl-theme .owl-dots .owl-dot span
+{
+	height: 15px; 
+	width: 15px;
+	margin-top: 50px;
+}
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span
+{
+	background-color: $yellow;
+}
+.punctuation i
+{
+	float: right;
+	color: darken($gray1,15%);
+	font-size: 1.8em;
+}
+} 
+
+/*styling statistics section
+***********************************/
+
+.statistics
+{
+	
+	background: url(../images/5.jpeg) fixed no-repeat;
+	background-size: cover;
+	background-position: 50% 50%; 	
+	color: $white;
+}
+
+.statistics .stat 
+{
+	padding-top: 50px;
+	padding-bottom: 50px;
+	width: 100%;
+	background-color: rgba($blue1,0.95);
+}
+.statistics .number
+{
+	&:hover
+	{
+
+		.icon3 i
+		{
+			color: darken($yellow,10%);
+		}
+	}
+}
+.countdown-item
+{
+	margin-bottom: 30px;
+}
+.statistics .countdown-item .icon3
+{
+	// margin-left: 90px;
+	height: 80px;
+	width: 85px;
+	line-height: 85px;
+	border-radius: 50%;
+	margin:0 auto;
+	@include shadow(0px,10px,35px,-5px,$black);
+
+}
+.statistics .countdown-item .icon3 i
+{
+	font-size: 35px !important;
+	color: $yellow;
+	@include transition();
+
+
+}
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+	[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+	  font-family: "Flaticon";
+	        font-size: 35px ;
+    		line-height: 60px;	
+
+	font-style: normal;
+	}
+.statistics .timer
+{
+	margin-top: 10px;
+	font-size: 2.5em;
+	font-weight: bold;
+}
+
+/* styling plog section **********
+*********************************/
+
+.blogs {
+    padding-top: 50px;
+    padding-bottom: 80px;
+    background-color: $gray1;
+    .thumbnail {
+        @media #{$maxmobile} {
+            margin: 50px 50px;
+        }
+        @media #{$maxmobile} {
+            margin: 50px 20px;
+        }
+        background-color: $white;
+        border: 0;
+        padding:0;
+        margin-top: 50px;
+        position: relative;
+		@include shadow(0px,19px,35px,0px,rgba($black, 0.1));
+        .image {
+            img {
+                height: 200px;
+            }
+            .cover {
+                position: absolute;
+                width: 100%;
+                height: 200px;
+                background-color: $blue;
+                opacity: 0.7;
+            }
+        }
+        .caption {
+            color: $blue;
+            padding: 20px 20px 20px 20px;
+            .date {
+                color: $yellow;
+            }
+            .btn-primary {
+                background-color: transparent;
+                border: 0;
+                color: $yellow;
+                padding-left: 0;
+                &:hover {
+                    i {
+                        margin-left: 5px;
+                        @include transition();
+                    }
+                }
+            }
+        }
+        &:hover {
+        }
+    }
+}
+
+/*start stling contact us section**************
+***********************************************/
+
+.contact-us
+{
+	padding-top: 50px;
+	padding-bottom: 50px;
+.contact
+{
+	margin-top: 50px;
+	color: $blue;
+	.contact1
+	{
+		padding: 15px;
+		padding-bottom: 20px;
+		.icon
+		{
+			border: 2px solid $yellow;
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+			margin: 0 auto;
+		}
+		.icon>i 
+		{
+			font-size: 1.3em;
+			color: $yellow;
+		}
+		.desc>h1
+		{
+			font-weight: 200;
+		}
+	}
+}
+
+.contactform
+{
+	margin-top: 50px;
+	.form-group
+	{
+		@include placeholder($blue);
+		input,textarea
+		{
+			background-color: transparent;
+			border: 2px solid $blue;
+			border-radius: 0px;
+			&:focus
+			{
+				outline: none;
+				box-shadow: none;
+			}
+		}
+		textarea
+		{
+			height: 170px;
+		}
+	}
+	.btn-success
+		{
+			background-color: $yellow;
+			border: 0;
+			float: right;
+			&:hover,&:focus
+			{
+				outline: none;
+				box-shadow: none;
+				background-color: darken($yellow,10%);
+				@include transition();
+			}
+		}
+
+}
+}
+
+
+/*start subscribe section********************
+********************************************/
+
+.subscribe
+{
+	padding-top: 20px;
+	padding-bottom: 30px;
+	background-color: $yellow;
+	
+}
+.subscribe .subs
+{
+	margin-top: 20px;
+}
+.subscribe .subs input
+{
+	padding-left: 30px;
+	margin-left: 13%;
+	background-color: $white;
+	border: none;
+	border-radius: 30px;
+	height: 55px;
+	width: 50%;
+}
+.subscribe .subs input[type="email"]::-webkit-input-placeholder
+{
+	font-size: 1.1em;
+}
+
+.subscribe .subs button
+{
+	background-color: $blue;
+	padding: 6px;
+	color: $white;
+	border-radius: 30px;
+	border: none;
+	height: 45px;
+	width: 13%;
+	position: relative;
+	right: 14%;
+	margin-bottom: 5px;
+	@include transition;
+	&:hover
+	{
+		border: 2px solid $yellow;
+		background: $yellow;
+		color: $white;
+	}
+}
+
+
+
+/*start foooter section************************/
+
+
+.follow
+{
+	padding-top: 50px;
+	padding-bottom: 10px;
+	background-color: $blue;
+	h1
+	{
+		color: $white;
+	}
+}
+
+.follow .icon5
+{
+	margin: 50px 90px;
+}
+
+.follow .icon5 .icon
+{
+	display: inline-block;
+	height: 50px;
+	width: 50px;
+	margin-bottom: 20px;
+	line-height: 45px;
+	font-size: 1.5em;
+	border: 2px solid $white;
+	color: $white;
+	cursor: pointer;
+	@include transition;
+	&:hover
+	{
+		background-color: $white;
+		color:$blue;
+	}
+}
+.follow hr 
+{
+	border:0.5px solid $yellow;
+}
+
+.follow .text
+{
+	color: $white;
+	margin-top: 50px;
+}
+.follow .text p span
+{
+	color :$yellow;
+	font-weight: bold;	
+}
+
+ 
